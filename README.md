@@ -3,10 +3,23 @@ Simple shoppingList application for mobile
 
 ## Intro
 
-Shopping List is an application that helps you to organize your shopping list. 
+Shopping List is an application that helps you to organize your shopping list.
 As a user you can add items to your list
 And check them once you bought them.
 You can also delete the checked items or even the entire list.
+
+<div style="display:flex;">
+<img src='./reademeImg/InitialState.jpg' alt='InitialState' width='150' style="padding-right: 5px;" />
+
+<img src='./reademeImg/ShoppingList.jpg' alt='ShoppingList' width='150' style="padding-right: 5px;" />
+
+<img src='./reademeImg/checkedItems.jpg' alt='checkedItems' width='150' style="padding-right: 5px;" />
+</div>
+<div style="display:flex;">
+<img src='./reademeImg/clearCheckedAlert.jpg' alt='clearCheckedAlert' width='150' style="padding-right: 5px;" />
+
+<img src='./reademeImg/clearListAlert.jpg' alt='clearListAlert' width='150' />
+</div>
 
 ## How to build the app on your computer:
 ### On android:
@@ -42,4 +55,3 @@ You can also delete the checked items or even the entire list.
  * on Linux/Mac run `./gradlew assembleRelease`
  * on Windows run : `gradlew assembleRelease`
  * your apk can be found in: `android/app/build/outputs/apk/app-release.apk`
- 
