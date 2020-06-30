@@ -61,7 +61,6 @@ const Footer = ({
 
 const styles = StyleSheet.create({
   footer: {
-    flex: 1,
     justifyContent: 'flex-end',
   },
   buttonWrapper: {
@@ -73,8 +72,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '45%',
     marginVertical: 20,
-    padding: 15,
-    backgroundColor: '#ff0000',
+    padding: 10,
+    backgroundColor: '#d32f2f',
     borderRadius: 5,
   },
   buttonText: {
@@ -88,8 +87,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '45%',
     marginVertical: 20,
-    padding: 15,
-    backgroundColor: '#ff7d7d',
+    padding: 10,
+    backgroundColor: '#e57373',
     borderRadius: 5,
   },
 });

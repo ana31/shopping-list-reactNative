@@ -2,10 +2,10 @@ import React, {useState, Fragment, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  View,
   StatusBar,
   TextInput,
   AppRegistry,
+  ScrollView,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import {List} from './src/List';
@@ -45,23 +45,19 @@ const App = () => {
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.page}>
-        <View>
-          <TextInput
-            style={styles.textInput}
-            onChangeText={(text) => changeInputText(text)}
-            onSubmitEditing={() => {
-              setList([...list, {text: value, checked: false}]);
-              changeInputText('');
-            }}
-            value={value}
-            placeholder="Add item"
-          />
-          <View style={styles.tasks}>
-            <View style={styles.sectionContainer}>
-              <List list={list} onChange={onChangeCheck} />
-            </View>
-          </View>
-        </View>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={(text) => changeInputText(text)}
+          onSubmitEditing={() => {
+            setList([...list, {text: value, checked: false}]);
+            changeInputText('');
+          }}
+          value={value}
+          placeholder="Add item"
+        />
+        <ScrollView style={styles.tasks} persistentScrollbar>
+          <List list={list} onChange={onChangeCheck} />
+        </ScrollView>
         <Footer
           setCheckedList={setCheckedList}
           setList={setList}
@@ -79,24 +75,20 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     paddingHorizontal: 10,
     flex: 1,
-    backgroundColor: '#d4f5fc',
+    backgroundColor: '#81c784',
   },
   tasks: {
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
     marginTop: 20,
-    display: 'flex',
-    flexDirection: 'row',
-    height: '80%',
-  },
-  sectionContainer: {
     width: '100%',
-    backgroundColor: '#d4f5fc',
+    backgroundColor: '#81c784',
   },
   textInput: {
     paddingLeft: 20,
-    backgroundColor: '#c0ebfc',
+    color: '#e8f5e9',
+    backgroundColor: '#43a047',
     fontSize: 24,
   },
 });

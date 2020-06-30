@@ -8,6 +8,7 @@ const List = ({list, onChange}) => {
       {list.map((item, index) => (
         <CheckBox
           style={styles.listItem}
+          checkBoxColor={'#263238'}
           rightTextStyle={
             item.checked ? styles.checkedText : styles.uncheckedText
           }
@@ -25,9 +26,11 @@ const styles = StyleSheet.create({
   checkedText: {
     textDecorationLine: 'line-through',
     fontSize: 20,
+    color: '#263238',
   },
   uncheckedText: {
     fontSize: 20,
+    color: '#263238',
   },
   listItem: {
     paddingTop: 15,
