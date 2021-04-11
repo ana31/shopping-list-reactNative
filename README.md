@@ -22,15 +22,18 @@ You can also delete the checked items or even the entire list.
 </div>
 
 ## How to build the app on your computer:
-### On android:
+### On android - if you connect your phone:
 
 * Clone this project
 * cd shopping-list-reactNative
-* make sure you have your [environment setup](https://reactnative.dev/docs/environment-setup)
 * run `npm install`
 * run `npm start`
 * connect an android device (make sure the device has developer mode active)
 * run `npm run android`
+
+## when using Android studio
+*  SDK Manager is located at Android Studio->Preferences->Appearance&Behavior->System Settings->Android SDK(if you need it to install your version of android)
+* make sure you have your [environment setup](https://reactnative.dev/docs/environment-setup)
 
 ## How to release app:
 ### On android: 
