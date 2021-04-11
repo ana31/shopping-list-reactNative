@@ -7,7 +7,7 @@ import {
   AppRegistry,
   ScrollView,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {List} from './src/List';
 import {Footer} from './src/Footer';
 

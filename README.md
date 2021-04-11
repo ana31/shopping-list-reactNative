@@ -26,6 +26,7 @@ You can also delete the checked items or even the entire list.
 
 * Clone this project
 * cd shopping-list-reactNative
+* make sure you have your [environment setup](https://reactnative.dev/docs/environment-setup)
 * run `npm install`
 * run `npm start`
 * connect an android device (make sure the device has developer mode active)
