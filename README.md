@@ -21,6 +21,10 @@ You can also delete the checked items or even the entire list.
 <img src='./reademeImg/clearListAlert.jpg' alt='clearListAlert' width='150' />
 </div>
 
+## Version 2 of this app offers:
+* edit each item
+* delete each item
+
 ## How to build the app on your computer:
 ### On android - if you connect your phone:
 
@@ -32,6 +36,7 @@ You can also delete the checked items or even the entire list.
 * run `npm run android`
 
 ## when using Android studio
+*  you need java version < 16
 *  SDK Manager is located at Android Studio->Preferences->Appearance&Behavior->System Settings->Android SDK(if you need it to install your version of android)
 * make sure you have your [environment setup](https://reactnative.dev/docs/environment-setup)
 

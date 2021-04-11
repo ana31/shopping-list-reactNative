@@ -26,17 +26,51 @@ const App = () => {
         }
       })
       .done();
+
+    AsyncStorage.getItem('shoppingListChecked')
+      .then((checkedListFromStore) => {
+        if (JSON.parse(checkedListFromStore)) {
+          setCheckedList(JSON.parse(checkedListFromStore));
+        } else {
+          setCheckedList([]);
+        }
+      })
+      .done();
   }, []);
 
   useEffect(() => {
     AsyncStorage.setItem('shoppingList', JSON.stringify(list), (err) => {
       console.log(err);
     });
-  }, [list]);
+
+    AsyncStorage.setItem(
+      'shoppingListChecked',
+      JSON.stringify(checkedList),
+      (err) => {
+        console.log(err);
+      },
+    );
+  }, [list, checkedList]);
 
   const onChangeCheck = (index, isChecked) => {
     const newList = JSON.parse(JSON.stringify(list));
     newList[index].checked = !isChecked;
+    setList(newList);
+    setCheckedList(newList.filter((item) => item.checked));
+  };
+  const onTextChange = (index, text) => {
+    const newList = JSON.parse(JSON.stringify(list));
+    newList.splice(index, 1, {
+      text,
+      checked: newList[index].checked,
+    });
+    setList(newList);
+    setCheckedList(newList.filter((item) => item.checked));
+  };
+
+  const onDelete = (index) => {
+    const newList = JSON.parse(JSON.stringify(list));
+    newList.splice(index, 1);
     setList(newList);
     setCheckedList(newList.filter((item) => item.checked));
   };
@@ -56,7 +90,12 @@ const App = () => {
           placeholder="Add item"
         />
         <ScrollView style={styles.tasks} persistentScrollbar>
-          <List list={list} onChange={onChangeCheck} />
+          <List
+            list={list}
+            onChange={onChangeCheck}
+            onDelete={onDelete}
+            onTextChange={onTextChange}
+          />
         </ScrollView>
         <Footer
           setCheckedList={setCheckedList}
